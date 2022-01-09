@@ -1,0 +1,11 @@
+import pandas
+data = pandas.read_csv("Users.csv")
+print(data)
+print("________________Usernames________________")
+print(data["Usernames"])
+print("________________Row 2 details________________")
+print(data["Usernames"][1], data["Password"][0])
+print("_________________________________________")
+print(data.sort_values("Usernames"))
+print("_________________________________________")
+print(data.sort_values("Usernames", ascending=False))
