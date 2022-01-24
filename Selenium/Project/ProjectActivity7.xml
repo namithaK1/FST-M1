@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<parameter name="url" value="https://alchemy.hguy.co/jobs/" />
+		<parameter name="email" value="namitha.k1@abc.com" />
+		<parameter name="jobTitle" value="Test Automation" />
+		<parameter name="description" value="This is the job description" />
+		<parameter name="applicationUrl" value="abc@xyza.com" />
+		<parameter name="companyName" value="ABCD Pvt Ltd" />
+		<classes>
+			<class name="SeleniumTestNGProject.Activity7" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
