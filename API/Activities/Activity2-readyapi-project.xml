@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="66eea829-d4c2-4a78-b19b-95c01608e13e" created="3.20.1" activeEnvironment="Default environment" name="Activity2" updated="3.20.1 2022-01-18T13:40:47Z" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="e4086241-5f04-45fe-8a08-0795076ff574" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://petstore.swagger.io" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://petstore.swagger.io</con:endpoint></con:endpoints><con:resource name="FindByStatus" path="/v2/pet/findByStatus" id="a3709231-65ba-429d-a918-403d88e808cf"><con:settings/><con:parameters/><con:method name="FindByStatus" id="3d7782c2-9c9e-43ee-974b-d14c0cb8088c" method="GET"><con:settings/><con:parameters><con:parameter required="true"><con:name>status</con:name><con:value>sold</con:value><con:style>QUERY</con:style><con:default>sold</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Request 1" id="db176516-87d5-4e2e-989c-8d373663be2b" mediaType="application/json"><con:settings/><con:endpoint>https://petstore.swagger.io</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><con:entry key="status" value="sold"/></con:parameters><con:parameterOrder><con:entry>status</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="a6437bdb-49ea-41ee-8d3f-6b9dbd328f27" name="Test Suite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="02c86a4c-04a4-4d9f-8570-aa47d472adcf" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Test Case" searchProperties="true" timeout="0"><con:settings/><con:testStep type="restrequest" name="Request 1" id="56a2a970-64f7-4c99-a259-10db07887e68"><con:settings/><con:config service="https://petstore.swagger.io" resourcePath="/v2/pet/findByStatus" methodName="FindByStatus" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request 1" id="db176516-87d5-4e2e-989c-8d373663be2b" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://petstore.swagger.io</con:endpoint><con:request/><con:originalUri>https://petstore.swagger.io/v2/pet/findByStatus</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="fcfc0590-700a-46ab-aa11-00d1a59f5cdf" name="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="e5605b4b-1c6f-4412-aaa7-8c02d4c01348" name="JSONPath Match"><con:configuration><path>$[0]['id']</path><content>54024619</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="e434ebec-c3bf-4b15-818b-fb774d2a3a80" name="JSONPath Match 2"><con:configuration><path>$[*]['id']</path><content>[&#13;
+   54024619,&#13;
+   7574746,&#13;
+   74408294,&#13;
+   15435006001660,&#13;
+   9223372000001086090,&#13;
+   5877373738,&#13;
+   502,&#13;
+   574,&#13;
+   773,&#13;
+   880,&#13;
+   363,&#13;
+   686,&#13;
+   191,&#13;
+   798,&#13;
+   492,&#13;
+   658,&#13;
+   888,&#13;
+   672,&#13;
+   339,&#13;
+   324,&#13;
+   717,&#13;
+   20,&#13;
+   515,&#13;
+   75778985,&#13;
+   157&#13;
+]</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters><con:entry key="status" value="sold"/></con:parameters><con:parameterOrder><con:entry>status</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest"><con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to ReadyAPI functional tests
+
+// If hardcoding the token, uncomment and change line 5
+// token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script></con:eventHandlers><con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep"><con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new java.io.FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new java.io.PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script></con:eventHandlers><con:authRepository/><con:tags/></con:soapui-project>
