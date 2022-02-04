@@ -1,4 +1,4 @@
 This is added to check the git commit step:
-git add .
-git commit -m "Adding new file"
-git push origin main
+git add . -> To add all new files
+git commit -m "Adding new file" -> Commiting the files, but won't add it to the respository yet 
+git push origin main -> This will push the commit to the repository and you can see the files in git repository (cloud)
