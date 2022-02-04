@@ -1,0 +1,4 @@
+This is added to check the git commit step:
+git add .
+git commit -m "Adding new file"
+git push origin main
