@@ -24,8 +24,7 @@ git commit -m "adding new branch"
 git push origin Develop
 
 Merge Conflict:
-A same File abc.txt in Dev and QA branch is modified and committed, now while merging there is a merge conflict
-
+A same File, same line in abc.txt of Dev and QA branch is modified and committed, now while merging there is a merge conflict
 git checkout Dev -> Switch to Dev branch
 git merge QA -> Add the content of QA branch to Dev branch
 -> if conflict comes then manually go to the abc.txt file, update the changes accordingly and commit it using
