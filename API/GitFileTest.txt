@@ -1,4 +1,41 @@
 This is added to check the git commit step:
+
+git clone https://github.com/namithak1/FST_M1 -> To get copy of the git folder to your local system
 git add . -> To add all new files
 git commit -m "Adding new file" -> Commiting the files, but won't add it to the respository yet 
 git push origin main -> This will push the commit to the repository and you can see the files in git repository (cloud)
+
+
+After creating new repository in git hub with same name as the local folder name:
+cd TheNewFolderWhichYouWantToCommit. Eg: cd IBM_FST_Copy
+git init -b main -> This will make the local folder as git folder(which is commitable)
+git add .  -> Adds all files from the folder (even though there are no files even then need to use this command)
+git commit -m "Adding all files" 
+git remote add origin https://github.com/namithak1/NewFolderRepositoryName 
+git push origin main
+
+Branches: After creating branches in github eg: Develpoment
+git pull -> Used incase if you get error while switching the branch
+git checkout Development -> just switches to Development branch
+
+git checkout -b Develop -> creates new branch and switches to the new branch
+git add .
+git commit -m "adding new branch"
+git push origin Develop
+
+Merge Conflict:
+A same File abc.txt in Dev and QA branch is modified and committed, now while merging there is a merge conflict
+
+git checkout Dev -> Switch to Dev branch
+git merge QA -> Add the content of QA branch to Dev branch
+-> if conflict comes then manually go to the abc.txt file, update the changes accordingly and commit it using
+git add .
+git commit -m "resolving merge conflict"
+git push origin Dev
+
+
+
+
+
+
+
